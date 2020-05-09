@@ -2,6 +2,9 @@
 
 Reaction Platform is a customizable, real-time, reactive commerce solution. This repository is the quickest way to get started with the [Reaction API][10] and its supporting services in a local development environment.
 
+
+
+
 ## Features
 
 * A modern, enterprise-ready, real-time commerce platform.
@@ -58,6 +61,13 @@ Example:
 ```sh
 make init-example-storefront
 ```
+
+
+
+## Credintials 
+admin@grocipe.com
+password: 123456
+
 
 ## Project Commands
 
