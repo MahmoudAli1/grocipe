@@ -40,7 +40,26 @@ Behind the scenes `make` is
 * downloading Docker images
 * starting services
 
-These services will be running when the initial `make` command is complete:
+
+## Credintials 
+admin@grocipe.com
+password: 123456
+
+
+
+
+## Project Commands
+
+```
+make
+make stop-example-storefront
+make dev-link-example-storefront
+make start-example-storefront
+
+```
+                           
+                           
+                           These services will be running when the initial `make` command is complete:
 
 | Service                                             | Description                                                                                                                                                                                         |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,7 +67,7 @@ These services will be running when the initial `make` command is complete:
 | [Reaction Identity][17] (http://localhost:4100)     | The OAuth2-compatible user interface for Reaction Identity, such as login and registration.                                                                                                         |
 | [Reaction API][10] (http://localhost:3000)          | The Reaction API, which includes [a GraphQL endpoint](http://localhost:3000/graphql-beta). See [GraphQL Playground](https://www.apollographql.com/docs/apollo-server/features/graphql-playground/). |
 | [Reaction Admin][19] (http://localhost:4080)        | A user interface for administrators and shop managers to configure shops, manage products, and process orders.                                                                                      |
-| [Example Storefront][13] (http://localhost:4000)    | An example Reaction storefront UI built with [Next.JS](https://github.com/zeit/next.js/).                                                                                                           |
+| [Example Storefront][13] (http://0.0.0.0:4000)    | An example Reaction storefront UI built with [Next.JS](https://github.com/zeit/next.js/).                                                                                                           |
 
 If the `make` command fails at some point, you can run or rerun it for specific services with:
 
@@ -63,39 +82,6 @@ make init-example-storefront
 ```
 
 
-
-## Credintials 
-admin@grocipe.com
-password: 123456
-
-
-## Project Commands
-
-These are the available `make` commands in the `reaction-platform` root directory.
-
-| Command                                                 | Description                                                                                                                                                                    |
-|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `make`                                                  | Bootstraps the entire Reaction development environment in Docker. Projects will use production Docker images and code.                                                         |
-| `make init-<project-name>`                              | Example: `make init-example-storefront`. Does clone/setup for a single project.                                                                                                |
-| `make init-dev`                                         | Bootstraps the entire Reaction development environment in Docker. Projects will use development configuration.                                                                 |
-| `make init-dev-<project-name>`                          | Example: `make init-dev-example-storefront`. Does clone/setup for a single project and configures it with a development configuration.                                         |
-| `make stop`                                             | Stops all containers.                                                                                                                                                          |
-| `make stop-<project-name>`                              | Example: `make stop-example-storefront`. Stops all containers for a single project.                                                                                            |
-| `make start`                                            | Starts all containers.                                                                                                                                                         |
-| `make start-<project-name>`                             | Example: `make start-example-storefront`. Starts all containers for a single project.                                                                                          |
-| `make dev-<project-name>`                               | Example: `make dev-example-storefront`. Starts all containers for a single project in development mode.                                                                        |
-| `make dev-link`                                         | Creates `docker-compose.override.yml` symlinks for development in all projects.                                                                                                |
-| `make dev-link-<project-name>`                          | Example: `make dev-link-example-storefront`. Creates development symlinks for a single project.                                                                                |
-| `make dev-unlink`                                       | Removes `docker-compose.override.yml` symlinks from all projects.                                                                                                              |
-| `make dev-unlink-<project-name>`                        | Example: `make dev-unlink-example-storefront`. Removes the `docker-compose.override.yml` symlink for a single project.                                                         |
-| `make rm`                                               | Removes all containers. Volumes are not removed.                                                                                                                               |
-| `make rm-<project-name>`                                | Example: `make rm-example-storefront`. Removes all containers for a single project. Volumes are not removed.                                                                   |
-| `make checkout-<project-name> <git-tag-or-branch-name>` | Example: `make checkout-example-storefront release-v3.0.0`. Does `git checkout` for a sub-project. See "Running Particular Git Branches" below.                                |
-| `make clean`                                            | Removes all containers, networks, and volumes. Any volume data will be lost.                                                                                                   |
-| `make clean-<project-name>`                             | Example: `make clean-example-storefront`. Removes all containers, networks, and volumes for a single project. Any volume data will be lost.                                    |
-| `make update-checkouts`                                 | Example: `make update-checkouts`. Updates git checkouts on all projects. Useful for syncing dev env to config file. Safe, fails on uncommitted changes.                        |
-| `make update-checkout-<project-name>`                   | Example: `make update-checkout-example-storefront`. Checks out branch in config file and pulls. Useful for syncing dev env to config file. Safe, fails on uncommitted changes. |
-| `make clone-api-plugins`                                | If you are going to make changes to the default plugins, this is a quick way to clone them all into an `api-plugins` subdirectory of this project.                             |
 
 ## Customizing Configuration
 
